@@ -5,39 +5,77 @@
     <name>AdminWindow</name>
     <message>
         <location filename="adminwindow.ui" line="14"/>
-        <source>MainWindow</source>
+        <source>Администрирование БД</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="adminwindow.ui" line="47"/>
-        <location filename="adminwindow.ui" line="73"/>
+        <location filename="adminwindow.ui" line="37"/>
+        <source>Таблицы</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="adminwindow.ui" line="55"/>
+        <location filename="adminwindow.ui" line="102"/>
         <source>Добавить</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="adminwindow.ui" line="60"/>
-        <location filename="adminwindow.ui" line="86"/>
+        <location filename="adminwindow.ui" line="62"/>
+        <location filename="adminwindow.ui" line="109"/>
         <source>Удалить</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="adminwindow.ui" line="101"/>
+        <location filename="adminwindow.ui" line="84"/>
+        <source>Атрибуты</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="adminwindow.ui" line="132"/>
         <source>Файл</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="adminwindow.ui" line="111"/>
+        <location filename="adminwindow.ui" line="143"/>
         <source>Выйти из учетной записи</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="adminwindow.ui" line="116"/>
+        <location filename="adminwindow.ui" line="148"/>
         <source>Выйти</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="adminwindow.ui" line="119"/>
+        <location filename="adminwindow.ui" line="151"/>
         <source>Ctrl+Q</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="adminwindow.ui" line="156"/>
+        <source>Обновить</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="adminwindow.ui" line="159"/>
+        <source>F5</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>EntityCreator</name>
+    <message>
+        <location filename="entitycreator.ui" line="23"/>
+        <source>Создание</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="entitycreator.ui" line="49"/>
+        <source>Введите название</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="entitycreator.ui" line="65"/>
+        <source>Ввод</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

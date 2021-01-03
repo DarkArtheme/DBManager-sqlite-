@@ -70,6 +70,45 @@ QStringListModel *DBManager::getColumns(QString table_name)
     return column_names_model;
 }
 
+bool DBManager::addColumn(QString table_name, QString column_name, QString column_type)
+{
+    bool res = false;
+    QSqlQuery query(database);
+    res = query.prepare("ALTER TABLE " + table_name + " ADD COLUMN " +
+                        column_name + " " + column_type + ";");
+    res = query.exec();
+    return res;
+}
+
+bool DBManager::deleteColumn(QString table_name, QString column_name)
+{
+    bool res = false;
+    QSqlQuery query(database);
+    res = query.prepare("ALTER TABLE " + table_name + " DROP COLUMN " +
+                        column_name + ";");
+    res = query.exec();
+    return res;
+}
+
+bool DBManager::addTable(QString table_name)
+{
+    bool res = false;
+    QSqlQuery query(database);
+    res = query.prepare("CREATE TABLE " + table_name + "(ID integer PRIMARY KEY AUTOINCREMENT NOT NULL);");
+    res = query.exec();
+    return res;
+}
+
+bool DBManager::deleteTable(QString table_name)
+{
+
+    bool res = false;
+    QSqlQuery query(database);
+    res = query.prepare("DROP TABLE " + table_name + ";");
+    res = query.exec();
+    return res;
+}
+
 bool DBManager::openDataBase()
 {
     /* База данных открывается по заданному пути

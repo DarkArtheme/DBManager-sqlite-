@@ -25,6 +25,9 @@ set(PROJECT_SOURCES
         adminwindow.ui
         dbmanager.cpp
         dbmanager.h
+        entitycreator.h
+        entitycreator.cpp
+        entitycreator.ui
         loginwindow.h
         loginwindow.cpp
         loginwindow.ui
