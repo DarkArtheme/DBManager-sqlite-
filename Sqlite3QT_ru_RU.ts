@@ -9,55 +9,102 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="adminwindow.ui" line="37"/>
+        <location filename="adminwindow.ui" line="31"/>
         <source>Таблицы</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="adminwindow.ui" line="55"/>
-        <location filename="adminwindow.ui" line="102"/>
+        <location filename="adminwindow.ui" line="76"/>
+        <location filename="adminwindow.ui" line="99"/>
         <source>Добавить</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="adminwindow.ui" line="62"/>
-        <location filename="adminwindow.ui" line="109"/>
+        <location filename="adminwindow.ui" line="83"/>
+        <location filename="adminwindow.ui" line="106"/>
         <source>Удалить</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="adminwindow.ui" line="84"/>
+        <location filename="adminwindow.ui" line="47"/>
         <source>Атрибуты</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="adminwindow.ui" line="132"/>
+        <location filename="adminwindow.ui" line="120"/>
+        <source>Переименовать</source>
+        <oldsource>Изменить</oldsource>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="adminwindow.ui" line="127"/>
+        <source>Сделать FK</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="adminwindow.ui" line="152"/>
         <source>Файл</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="adminwindow.ui" line="143"/>
+        <location filename="adminwindow.ui" line="163"/>
         <source>Выйти из учетной записи</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="adminwindow.ui" line="148"/>
+        <location filename="adminwindow.ui" line="168"/>
         <source>Выйти</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="adminwindow.ui" line="151"/>
+        <location filename="adminwindow.ui" line="171"/>
         <source>Ctrl+Q</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="adminwindow.ui" line="156"/>
+        <location filename="adminwindow.ui" line="176"/>
         <source>Обновить</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="adminwindow.ui" line="159"/>
+        <location filename="adminwindow.ui" line="179"/>
         <source>F5</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ColumnCreator</name>
+    <message>
+        <location filename="columncreator.ui" line="14"/>
+        <source>Dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="columncreator.ui" line="32"/>
+        <source>Введите название колонки</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="columncreator.ui" line="45"/>
+        <source>Ввод</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ColumnRenamer</name>
+    <message>
+        <location filename="columnrenamer.ui" line="14"/>
+        <source>Dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="columnrenamer.ui" line="30"/>
+        <source>Введите новое название колонки</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="columnrenamer.ui" line="43"/>
+        <source>Ввод</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -70,7 +117,8 @@
     </message>
     <message>
         <location filename="entitycreator.ui" line="49"/>
-        <source>Введите название</source>
+        <source>Введите название таблицы</source>
+        <oldsource>Введите название</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>

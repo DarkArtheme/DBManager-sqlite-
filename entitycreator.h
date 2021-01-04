@@ -15,10 +15,10 @@ class EntityCreator : public QDialog
 public:
     explicit EntityCreator(QWidget *parent = nullptr, DBManager* db_manager_ = nullptr);
     ~EntityCreator();
-    QString getName(){ return name; }
+    QString getName() const { return name; }
 signals:
     void nameIsEntered(QString new_name);
-    void isClosed();
+    void isClosed(bool should_show_columns);
 private slots:
     void on_pushButton_clicked();
 

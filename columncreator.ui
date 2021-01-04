@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>EntityCreator</class>
- <widget class="QDialog" name="EntityCreator">
+ <class>ColumnCreator</class>
+ <widget class="QDialog" name="ColumnCreator">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -10,17 +10,8 @@
     <height>300</height>
    </rect>
   </property>
-  <property name="sizePolicy">
-   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-    <horstretch>0</horstretch>
-    <verstretch>0</verstretch>
-   </sizepolicy>
-  </property>
-  <property name="contextMenuPolicy">
-   <enum>Qt::NoContextMenu</enum>
-  </property>
   <property name="windowTitle">
-   <string>Создание</string>
+   <string>Dialog</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_2">
    <item>
@@ -30,29 +21,18 @@
      </property>
      <item>
       <widget class="QLabel" name="label">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
        <property name="font">
         <font>
          <pointsize>12</pointsize>
          <weight>75</weight>
-         <italic>false</italic>
          <bold>true</bold>
-         <kerning>true</kerning>
         </font>
        </property>
        <property name="text">
-        <string>Введите название таблицы</string>
+        <string>Введите название колонки</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
-       </property>
-       <property name="wordWrap">
-        <bool>false</bool>
        </property>
       </widget>
      </item>

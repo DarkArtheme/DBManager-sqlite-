@@ -14,7 +14,7 @@ EntityCreator::EntityCreator(QWidget *parent, DBManager* db_manager_) :
 
 EntityCreator::~EntityCreator()
 {
-    emit isClosed();
+    emit isClosed(false);
     delete ui;
 }
 
@@ -35,6 +35,6 @@ void EntityCreator::on_pushButton_clicked()
     }
     name = table_name;
     emit nameIsEntered(table_name);
-    emit isClosed();
+    emit isClosed(false);
     this->close();
 }

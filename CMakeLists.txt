@@ -23,6 +23,12 @@ set(PROJECT_SOURCES
         adminwindow.h
         adminwindow.cpp
         adminwindow.ui
+        columncreator.h
+        columncreator.cpp
+        columncreator.ui
+        columnrenamer.h
+        columnrenamer.cpp
+        columnrenamer.ui
         dbmanager.cpp
         dbmanager.h
         entitycreator.h

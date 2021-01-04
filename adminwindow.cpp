@@ -8,8 +8,11 @@ AdminWindow::AdminWindow(QWidget *parent, DBManager* db_manager_) :
     db_manager(db_manager_),
     empty_model(new QStringListModel())
 {
+    chosenTable_double_clicked = "";
     ui->setupUi(this);
     table_creator = new EntityCreator(this, db_manager);
+    column_creator = new ColumnCreator(this, db_manager);
+    column_renamer = new ColumnRenamer(this, db_manager);
     ui->tableNames->setModel(db_manager->getTables());
     ui->tableNames->setEditTriggers(QAbstractItemView::NoEditTriggers);
     ui->columnNames->setEditTriggers(QAbstractItemView::NoEditTriggers);
@@ -18,6 +21,7 @@ AdminWindow::AdminWindow(QWidget *parent, DBManager* db_manager_) :
 AdminWindow::~AdminWindow()
 {
     delete ui;
+    ui = nullptr;
 }
 
 void AdminWindow::on_relogin_triggered()
@@ -33,13 +37,14 @@ void AdminWindow::on_exit_triggered()
 
 void AdminWindow::on_tableNames_doubleClicked(const QModelIndex &index)
 {
-    ui->columnNames->setModel(db_manager->getColumns(ui->tableNames->model()->data(index).toString()));
+    chosenTable_double_clicked = ui->tableNames->model()->data(index).toString();
+    ui->columnNames->setModel(db_manager->getColumns(chosenTable_double_clicked));
 }
 
 void AdminWindow::on_addTable_clicked()
 {
     connect(table_creator, &EntityCreator::nameIsEntered, db_manager, &DBManager::addTable);
-    connect(table_creator, &EntityCreator::nameIsEntered, this, &AdminWindow::update);
+    connect(table_creator, &EntityCreator::isClosed, this, &AdminWindow::update);
     table_creator->exec();
 }
 
@@ -47,7 +52,7 @@ void AdminWindow::on_addTable_clicked()
 
 void AdminWindow::on_update_triggered()
 {
-    this->update();
+    this->update(false);
 }
 
 void AdminWindow::on_tableNames_clicked(const QModelIndex &index)
@@ -63,12 +68,72 @@ void AdminWindow::on_delTable_clicked()
     }
     db_manager->deleteTable(chosenTable);
     chosenTable = "";
-    this->update();
+    this->update(false);
 }
 
-void AdminWindow::update()
+void AdminWindow::update(bool should_show_columns)
 {
+    if(ui == nullptr)
+        return;
     ui->tableNames->setModel(db_manager->getTables());
+    if(!should_show_columns){
+        ui->columnNames->setModel(empty_model);
+    } else{
+        ui->columnNames->setModel(db_manager->getColumns(chosenTable_double_clicked));
+    }
+}
 
-    ui->columnNames->setModel(empty_model);
+void AdminWindow::on_addCol_clicked()
+{
+    if(chosenTable_double_clicked == ""){
+        return;
+    }
+    column_creator->setTableName(chosenTable_double_clicked);
+    connect(column_creator, &ColumnCreator::nameIsEntered, db_manager, &DBManager::addColumn);
+    connect(column_creator, &ColumnCreator::isClosed, this, &AdminWindow::update);
+    column_creator->exec();
+}
+
+void AdminWindow::on_columnNames_clicked(const QModelIndex &index)
+{
+    QString chosenColumn_ = ui->columnNames->model()->data(index).toString();
+    QTextStream ss(&chosenColumn_);
+    ss >> chosenColumn;
+}
+
+void AdminWindow::on_delCol_clicked()
+{
+    //qDebug() << chosenColumn << " " << chosenTable_double_clicked;
+    if(chosenColumn == "" || chosenTable_double_clicked == "sqlite_sequence"){
+        return;
+    }
+    if(chosenColumn == "ID"){
+        QMessageBox::warning(this, "Ошибка!", "ID не может быть удален!");
+        return;
+    }
+    db_manager->deleteColumn(chosenTable_double_clicked, chosenColumn);
+    chosenColumn = "";
+    this->update(true);
+}
+
+void AdminWindow::changeChosenColumn(QString new_name)
+{
+    chosenColumn = new_name;
+}
+
+void AdminWindow::on_renameCol_clicked()
+{
+    if(chosenColumn == "" || chosenTable_double_clicked == "sqlite_sequence"){
+        return;
+    }
+    if(chosenColumn == "ID"){
+        QMessageBox::warning(this, "Ошибка!", "ID не может быть переименован!");
+        return;
+    }
+    column_renamer->setTableName(chosenTable_double_clicked);
+    column_renamer->setOldName(chosenColumn);
+    connect(column_renamer, &ColumnRenamer::nameIsEntered, db_manager, &DBManager::renameColumn);
+    connect(column_renamer, &ColumnRenamer::changeChosenColumn, this, &AdminWindow::changeChosenColumn);
+    connect(column_renamer, &ColumnRenamer::isClosed, this, &AdminWindow::update);
+    column_renamer->exec();
 }

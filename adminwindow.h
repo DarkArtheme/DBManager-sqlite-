@@ -3,6 +3,8 @@
 
 #include "dbmanager.h"
 #include "entitycreator.h"
+#include "columncreator.h"
+#include "columnrenamer.h"
 #include <QMainWindow>
 
 namespace Ui {
@@ -33,13 +35,27 @@ private slots:
 
     void on_delTable_clicked();
 
-    void update();
+    void update(bool should_show_columns);
+
+    void on_addCol_clicked();
+
+    void on_columnNames_clicked(const QModelIndex &index);
+
+    void on_delCol_clicked();
+
+    void changeChosenColumn(QString new_name);
+
+    void on_renameCol_clicked();
 
 private:
     Ui::AdminWindow *ui;
     DBManager *db_manager;
     EntityCreator* table_creator;
+    ColumnCreator* column_creator;
+    ColumnRenamer* column_renamer;
     QString chosenTable;
+    QString chosenTable_double_clicked;
+    QString chosenColumn;
     QStringListModel* empty_model;
 };
 

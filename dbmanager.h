@@ -23,6 +23,7 @@ public slots:
     bool deleteColumn(QString table_name, QString column_name);
     bool addTable(QString table_name);
     bool deleteTable(QString table_name);
+    bool renameColumn(QString table_name, QString old_name, QString new_name);
 private:
     QSqlDatabase database;
     QSqlRelationalTableModel* model{nullptr};
