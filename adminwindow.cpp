@@ -10,9 +10,10 @@ AdminWindow::AdminWindow(QWidget *parent, DBManager* db_manager_) :
 {
     chosenTable_double_clicked = "";
     ui->setupUi(this);
-    table_creator = new EntityCreator(this, db_manager);
-    column_creator = new ColumnCreator(this, db_manager);
-    column_renamer = new ColumnRenamer(this, db_manager);
+
+
+
+
     ui->tableNames->setModel(db_manager->getTables());
     ui->tableNames->setEditTriggers(QAbstractItemView::NoEditTriggers);
     ui->columnNames->setEditTriggers(QAbstractItemView::NoEditTriggers);
@@ -43,6 +44,8 @@ void AdminWindow::on_tableNames_doubleClicked(const QModelIndex &index)
 
 void AdminWindow::on_addTable_clicked()
 {
+    table_creator = new EntityCreator(this, db_manager);
+    table_creator->setAttribute(Qt::WA_DeleteOnClose);
     connect(table_creator, &EntityCreator::nameIsEntered, db_manager, &DBManager::addTable);
     connect(table_creator, &EntityCreator::isClosed, this, &AdminWindow::update);
     table_creator->exec();
@@ -85,6 +88,8 @@ void AdminWindow::update(bool should_show_columns)
 
 void AdminWindow::on_addCol_clicked()
 {
+    column_creator = new ColumnCreator(this, db_manager);
+    column_creator->setAttribute(Qt::WA_DeleteOnClose);
     if(chosenTable_double_clicked == ""){
         return;
     }
@@ -123,6 +128,8 @@ void AdminWindow::changeChosenColumn(QString new_name)
 
 void AdminWindow::on_renameCol_clicked()
 {
+    column_renamer = new ColumnRenamer(this, db_manager);
+    column_renamer->setAttribute(Qt::WA_DeleteOnClose);
     if(chosenColumn == "" || chosenTable_double_clicked == "sqlite_sequence"){
         return;
     }
@@ -136,4 +143,14 @@ void AdminWindow::on_renameCol_clicked()
     connect(column_renamer, &ColumnRenamer::changeChosenColumn, this, &AdminWindow::changeChosenColumn);
     connect(column_renamer, &ColumnRenamer::isClosed, this, &AdminWindow::update);
     column_renamer->exec();
+}
+
+void AdminWindow::on_makeFK_clicked()
+{
+    fk_creator = new FKCreator(this, db_manager);
+    fk_creator->setAttribute(Qt::WA_DeleteOnClose);
+    fk_creator->setFKTable(chosenTable_double_clicked);
+    connect(fk_creator, &FKCreator::tableWasChosen, db_manager, &DBManager::makeForeignKey);
+    connect(fk_creator, &FKCreator::isClosed, this, &AdminWindow::update);
+    fk_creator->exec();
 }

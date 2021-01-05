@@ -14,14 +14,14 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="adminwindow.ui" line="76"/>
-        <location filename="adminwindow.ui" line="99"/>
+        <location filename="adminwindow.ui" line="82"/>
+        <location filename="adminwindow.ui" line="105"/>
         <source>Добавить</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="adminwindow.ui" line="83"/>
-        <location filename="adminwindow.ui" line="106"/>
+        <location filename="adminwindow.ui" line="89"/>
+        <location filename="adminwindow.ui" line="112"/>
         <source>Удалить</source>
         <translation type="unfinished"></translation>
     </message>
@@ -31,43 +31,43 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="adminwindow.ui" line="120"/>
+        <location filename="adminwindow.ui" line="126"/>
         <source>Переименовать</source>
         <oldsource>Изменить</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="adminwindow.ui" line="127"/>
+        <location filename="adminwindow.ui" line="133"/>
         <source>Сделать FK</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="adminwindow.ui" line="152"/>
+        <location filename="adminwindow.ui" line="158"/>
         <source>Файл</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="adminwindow.ui" line="163"/>
+        <location filename="adminwindow.ui" line="169"/>
         <source>Выйти из учетной записи</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="adminwindow.ui" line="168"/>
+        <location filename="adminwindow.ui" line="174"/>
         <source>Выйти</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="adminwindow.ui" line="171"/>
+        <location filename="adminwindow.ui" line="177"/>
         <source>Ctrl+Q</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="adminwindow.ui" line="176"/>
+        <location filename="adminwindow.ui" line="182"/>
         <source>Обновить</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="adminwindow.ui" line="179"/>
+        <location filename="adminwindow.ui" line="185"/>
         <source>F5</source>
         <translation type="unfinished"></translation>
     </message>
@@ -128,6 +128,24 @@
     </message>
 </context>
 <context>
+    <name>FKCreator</name>
+    <message>
+        <location filename="fkcreator.ui" line="14"/>
+        <source>Dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="fkcreator.ui" line="30"/>
+        <source>Выберите таблицу</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="fkcreator.ui" line="48"/>
+        <source>Выбрать</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>LoginWindow</name>
     <message>
         <location filename="loginwindow.ui" line="14"/>
@@ -135,13 +153,43 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="loginwindow.ui" line="31"/>
+        <location filename="loginwindow.ui" line="154"/>
         <source>Администратор</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="loginwindow.ui" line="38"/>
+        <location filename="loginwindow.ui" line="161"/>
         <source>Оператор</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="loginwindow.ui" line="25"/>
+        <source>Создать</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="loginwindow.ui" line="45"/>
+        <source>...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="loginwindow.ui" line="54"/>
+        <source>Открыть</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="loginwindow.ui" line="116"/>
+        <source>Логин:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="loginwindow.ui" line="138"/>
+        <source>Пароль:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="loginwindow.ui" line="185"/>
+        <source>Войти</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -149,31 +197,46 @@
     <name>MainWindow</name>
     <message>
         <location filename="mainwindow.ui" line="20"/>
-        <source>MainWindow</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="mainwindow.ui" line="35"/>
-        <source>Select</source>
+        <source>Оперирование БД</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="54"/>
+        <source>Изменить значение</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="106"/>
+        <source>Добавить строку</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="113"/>
+        <source>Удалить строку</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="79"/>
+        <source>Выбрать таблицу</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="134"/>
         <source>Файл</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="64"/>
+        <location filename="mainwindow.ui" line="144"/>
         <source>Выйти из учетной записи</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="69"/>
+        <location filename="mainwindow.ui" line="149"/>
         <source>Выйти</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="72"/>
+        <location filename="mainwindow.ui" line="152"/>
         <source>Ctrl+Q</source>
         <translation type="unfinished"></translation>
     </message>

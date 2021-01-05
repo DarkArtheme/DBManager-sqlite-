@@ -34,6 +34,9 @@ set(PROJECT_SOURCES
         entitycreator.h
         entitycreator.cpp
         entitycreator.ui
+        fkcreator.h
+        fkcreator.cpp
+        fkcreator.ui
         loginwindow.h
         loginwindow.cpp
         loginwindow.ui

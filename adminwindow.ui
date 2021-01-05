@@ -55,6 +55,9 @@
       </item>
       <item>
        <layout class="QHBoxLayout" name="horizontalLayout_5">
+        <property name="spacing">
+         <number>20</number>
+        </property>
         <item>
          <widget class="QListView" name="tableNames"/>
         </item>
@@ -65,6 +68,9 @@
       </item>
       <item>
        <layout class="QHBoxLayout" name="horizontalLayout_6">
+        <property name="spacing">
+         <number>20</number>
+        </property>
         <item>
          <layout class="QHBoxLayout" name="horizontalLayout">
           <property name="spacing">

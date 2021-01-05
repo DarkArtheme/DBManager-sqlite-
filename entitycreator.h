@@ -1,3 +1,4 @@
+#pragma once
 #ifndef ENTITYCREATOR_H
 #define ENTITYCREATOR_H
 

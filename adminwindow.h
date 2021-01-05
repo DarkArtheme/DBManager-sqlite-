@@ -1,3 +1,4 @@
+#pragma once
 #ifndef ADMINWINDOW_H
 #define ADMINWINDOW_H
 
@@ -5,6 +6,7 @@
 #include "entitycreator.h"
 #include "columncreator.h"
 #include "columnrenamer.h"
+#include "fkcreator.h"
 #include <QMainWindow>
 
 namespace Ui {
@@ -47,12 +49,15 @@ private slots:
 
     void on_renameCol_clicked();
 
+    void on_makeFK_clicked();
+
 private:
     Ui::AdminWindow *ui;
     DBManager *db_manager;
     EntityCreator* table_creator;
     ColumnCreator* column_creator;
     ColumnRenamer* column_renamer;
+    FKCreator* fk_creator;
     QString chosenTable;
     QString chosenTable_double_clicked;
     QString chosenColumn;

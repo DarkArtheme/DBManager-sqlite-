@@ -1,3 +1,4 @@
+#pragma once
 #ifndef COLUMNCREATOR_H
 #define COLUMNCREATOR_H
 

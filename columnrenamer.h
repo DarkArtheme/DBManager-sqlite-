@@ -1,3 +1,4 @@
+#pragma once
 #ifndef COLUMNRENAMER_H
 #define COLUMNRENAMER_H
 
