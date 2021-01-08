@@ -234,15 +234,24 @@ bool DBManager::deleteColumn(QString table_name, QString column_name)
             types.append(query_to_know_type.value(2).toString());
         ++c;
     }
-    QString query_text = QString("CREATE TABLE %1_backup (ID INT PRIMARY KEY, ");
+    QString query_text = QString("CREATE TABLE %1_backup (ID INT PRIMARY KEY");
     QString field = "%1 %2";
+    bool written_comma = false;
     for(int i = 0; i < columns.size(); ++i){
+        if(i == 0 && !written_comma){
+            query_text += ", ";
+            written_comma = true;
+        }
         query_text += field.arg(columns[i]).arg(types[i]);
         if(i < columns.size() - 1 || !creatingFK.empty()){
             query_text += ", ";
         }
     }
     for(int i = 0; i < creatingFK.size(); ++i){
+        if(i == 0 && !written_comma){
+            query_text += ", ";
+            written_comma = true;
+        }
         query_text += creatingFK[i];
         if(i < creatingFK.size() - 1){
             query_text += ", ";
@@ -250,39 +259,49 @@ bool DBManager::deleteColumn(QString table_name, QString column_name)
     }
     query_text += ");";
     QSqlQuery query(database);
-    ///*qDebug() <<*/ query_text.arg(table_name);
+    //qDebug() << query_text.arg(table_name);
     query.prepare(QString(query_text.arg(table_name)));
     query.exec();
 
     query.clear();
-    query_text = QString("INSERT INTO %1_backup(ID, ");
+    query_text = QString("INSERT INTO %1_backup(ID");
+    written_comma = false;
     for(int i = 0; i < columns.size(); ++i){
+        if(i == 0 && !written_comma){
+            query_text += ", ";
+            written_comma = true;
+        }
         query_text += columns[i];
         if(i < columns.size() - 1){
             query_text += ", ";
         }
     }
-    query_text += ") SELECT ID, ";
+    query_text += ") SELECT ID";
+    written_comma = false;
     for(int i = 0; i < columns.size(); ++i){
+        if(i == 0 && !written_comma){
+            query_text += ", ";
+            written_comma = true;
+        }
         query_text += columns[i];
         if(i < columns.size() - 1){
             query_text += ", ";
         }
     }
     query_text += " FROM %1 ;";
-    ///*qDebug() <<*/ query_text.arg(table_name);
+    //qDebug() << query_text.arg(table_name);
     query.exec(QString(query_text.arg(table_name)));
-    ///*qDebug() <<*/ query.lastError().text();
+    //qDebug() << query.lastError().text();
 
     query.clear();
     query_text = QString("DROP TABLE %1;");
-    ///*qDebug() <<*/ query_text.arg(table_name);
+    //qDebug() << query_text.arg(table_name);
     query.prepare(QString(query_text.arg(table_name)));
     query.exec();
 
     query.clear();
     query_text = QString("ALTER TABLE %1_backup RENAME TO %1;");
-    ///*qDebug() <<*/ query_text.arg(table_name);
+    //qDebug() << query_text.arg(table_name);
     query.prepare(QString(query_text.arg(table_name)));
     return query.exec();
 }

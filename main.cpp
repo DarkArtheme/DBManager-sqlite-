@@ -1,6 +1,4 @@
-#include "dbmanager.h"
 #include "loginwindow.h"
-#include <iostream>
 #include <QApplication>
 
 int main(int argc, char *argv[])
